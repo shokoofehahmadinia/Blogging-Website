@@ -1,0 +1,731 @@
+/* ===================================================
+   ROOT PALETTE — LIGHT
+=================================================== */
+
+:root {
+  --bg-main: #F3EFEA;
+  --bg-window: #E6DED4;
+  --bg-nav: #ECE4DA;
+
+  --accent: #8B5E3C;
+  --accent-hover: #6F472B;
+
+  --text-main: #3E3A36;
+  --text-muted: #7A746E;
+
+  --border-soft: #D8CFC5;
+
+  --shadow-soft: 0 12px 30px rgba(0,0,0,0.06);
+  --shadow-elevated: 0 20px 50px rgba(0,0,0,0.10);
+}
+
+/* ===================================================
+   DARK MODE
+=================================================== */
+
+body.dark {
+  --bg-main: #1F1C19;
+  --bg-window: #2B2723;
+  --bg-nav: #312C28;
+
+  --accent: #C49A6C;
+  --accent-hover: #B48758;
+
+  --text-main: #EDE6DD;
+  --text-muted: #B8B2AA;
+
+  --border-soft: #3A342F;
+
+  --shadow-soft: 0 12px 30px rgba(0,0,0,0.35);
+  --shadow-elevated: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+/* ===================================================
+   GLOBAL
+=================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+/* Only page titles centered */
+.page-header h1,
+.page-title {
+  text-align: center;
+}
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+/* ===================================================
+   FULL WINDOW
+=================================================== */
+
+.window {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg-window);
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 0 1px var(--border-soft);
+  transition: 0.4s ease;
+}
+
+.window-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 50px; /* taller header */
+  border-bottom: 1px solid var(--border-soft);
+}
+
+
+.window-content {
+  padding: 90px 140px;
+  flex: 1;
+}
+
+/* ===================================================
+   LUXURY DIVIDER
+=================================================== */
+
+/* ==============================
+   PENCIL DIVIDER
+============================== */
+
+.section-divider {
+  text-align: left;
+  font-size: 20px;
+  color: var(--accent);
+  margin: 40px 0 70px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: "✎";
+  margin-right: 10px;
+}
+
+.section-divider::after {
+  content: "﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏";
+}
+
+/* ===================================================
+   NAVIGATION
+=================================================== */
+
+.logo {
+  font-size: 30px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nav-buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+/* ==========================
+   BRAND WITH IMAGE
+========================== */
+.logo {
+  display: flex;
+  align-items: flex-end;   /* makes brand name sit lower */
+  gap: 20px;               /* space between logo and name */
+  text-decoration: none;
+}
+
+.logo img {
+  width: 60px;             /* CONTROL SIZE HERE */
+  height: 60px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-brand);
+  font-size: 32px;
+  color: var(--accent);
+  line-height: 1;
+  transform: translateY(6px); /* makes it touch bottom visually */
+}
+
+
+/* ICON BUTTONS */
+
+.circle {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.35s cubic-bezier(.22,1,.36,1);
+  color: var(--text-main);
+  background: transparent;
+}
+
+.circle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* UNIVERSAL TOOLTIP (Works in Dark + Light Mode) */
+
+.circle::after,
+.login::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -38px;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.circle:hover::after,
+.login:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================
+   LOGIN BUTTON — POLISHED
+========================== */
+
+/* ==========================
+   LOGIN BUTTON — MATCH NAV
+========================== */
+
+.login {
+  margin-left: 20px;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+  border: 1.5px solid var(--border-soft);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  color: var(--text-main);
+
+  transition: all 0.35s cubic-bezier(.22,1,.36,1);
+  position: relative;
+}
+
+.login:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-4px);
+}
+
+/* ================= LOGIN ================= */
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.login-card {
+  width: 420px;
+  padding: 50px;
+  border-radius: 20px;
+  background: var(--bg-window);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.login-card h1 {
+  margin-bottom: 10px;
+}
+
+.login-card p {
+  margin-bottom: 30px;
+  color: var(--text-muted);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-form input {
+  padding: 14px 18px;
+  border-radius: 40px;
+  border: 1px solid var(--border-soft);
+  background: transparent;
+  font-size: 15px;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: var(--accent);
+}
+
+.login-form button {
+  padding: 14px;
+  border-radius: 40px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-form button:hover {
+  background: var(--accent-hover);
+}
+
+.login-footer {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.login-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ======================
+   AUTH PAGES
+====================== */
+
+.auth-container {
+  max-width: 420px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.auth-form input {
+  padding: 12px 16px;
+  border-radius: 50px;
+  border: 1px solid var(--border-soft);
+  background: transparent;
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: var(--accent);
+}
+
+.auth-btn {
+  padding: 12px;
+  border-radius: 50px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.auth-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.auth-switch {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.auth-switch a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+
+
+/* ===================================================
+   BLOG
+=================================================== */
+
+.blog-list {
+  margin-top: 40px;
+}
+
+.blog-card {
+  display: flex;
+  gap: 70px;
+  align-items: center;
+  padding: 70px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.blog-card img {
+  width: 420px;
+  border-radius: 16px;
+  margin-left: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.blog-content h2 {
+  text-align: left;
+  font-size: 28px;
+}
+
+.read-more {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.read-more:hover {
+  color: var(--accent-hover);
+}
+
+/* Pagination */
+
+.pagination {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.pagination button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.pagination button:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ===================================================
+   QUOTES
+=================================================== */
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
+  gap: 50px;
+}
+
+.quote-card {
+  background: var(--bg-window);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: 0.3s;
+}
+
+.quote-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+
+.quote-card:hover {
+  box-shadow: var(--shadow-elevated);
+}
+
+.quote-actions {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.action-btn {
+  width: 160px;
+  padding: 12px 0;
+  border-radius: 40px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.action-btn:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ===================================================
+   VIDEOS
+=================================================== */
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  gap: 100px;
+}
+
+.video-card {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.video-card iframe {
+  width: 500px;
+  height: 300px;
+}
+
+.video-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+
+.video-row iframe {
+  width: 600px;
+  height: 340px;
+  border-radius: 20px;
+}
+
+.video-desc {
+  max-width: 400px;
+}
+
+/* ===================================================
+   CONTACT GRID
+=================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 50px;
+  max-width: 800px;
+  margin: 70px auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 18px;
+  padding: 18px;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.contact-item:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+/* ===================================================
+   SETTINGS
+=================================================== */
+
+.settings-container {
+  max-width: 520px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.settings-btn {
+  padding: 16px;
+  border-radius: 50px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.settings-btn:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+
+/* ===================================================
+   Professional Layout
+=================================================== */
+.about-hero {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.author-image {
+  width: 55%;
+  border-radius: 20px;
+}
+
+.author-info {
+  width: 45%;
+}
+
+.book-section {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.book-section img {
+  width: 350px;
+  border-radius: 16px;
+}
+
+.book-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.blog-detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.blog-detail img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 40px;
+}
+
+.poetry-card {
+  padding: 30px;
+  border-radius: 16px;
+  background: var(--bg-window);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==============================
+   ABOUT SECTION FIX
+============================== */
+
+.about-hero {
+  display: flex;
+  align-items: flex-start; /* START FROM TOP */
+  gap: 80px;
+  padding: 100px 120px 60px;
+}
+
+.about-hero img {
+  width: 55%;
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.about-info {
+  width: 45%;
+  padding-top: 10px; /* slight breathing */
+}
+
+.about-info h1 {
+  text-align: left;   /* IMPORTANT */
+  margin-top: 0;
+}
+
+.about-info h2 {
+  font-size: 22px;
+  color: var(--accent);
+  margin-top: 20px;
+}
+
+.about-info p {
+  color: var(--text-muted);
+  margin: 10px 0;
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+
+@media (max-width: 1024px) {
+  .window-content {
+    padding: 60px 40px;
+  }
+
+  .blog-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blog-content h2 {
+    text-align: center;
+  }
+
+  .blog-card img {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
